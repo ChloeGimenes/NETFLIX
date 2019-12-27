@@ -5,8 +5,9 @@
   background-size: 100%, cover !important;
   background-position: center, center !important;
   position: relative;
-  /* background-position: center, center !important; */
+
 }
+
 .headerImg--overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.3);
@@ -21,6 +22,7 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .headerImg--overlay__title {
   font-size: 3.5rem;
   font-weight: bold;
@@ -28,6 +30,7 @@
   border-bottom: 0.7rem solid #d8a860;
   align-self: flex-start;
 }
+
 .headerImg--overlay__desc {
   font-size: 2.3rem;
   text-align: justify;
