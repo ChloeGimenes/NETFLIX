@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HeaderImg, SearchBar } from '../components';
+import { HeaderImg, SearchBar, PosterList } from '../components';
 
 
 const movies = [
@@ -44,9 +44,10 @@ class Home extends Component {
     <HeaderImg 
       title="Fast an Furious"
        overview="Lorem Ipsum"
-       imgSrc={'../../images/Fast_large.jpg'} 
+       imgSrc={'./images/Fast_small.jpg'} 
     />
     <SearchBar />
+    <PosterList movies={movies} />
     </div>;
   }
 }
