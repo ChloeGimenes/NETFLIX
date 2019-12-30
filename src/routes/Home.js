@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HeaderImg } from '../components';
+import { HeaderImg, SearchBar } from '../components';
 
 
 const movies = [
@@ -40,12 +40,14 @@ const movies = [
 class Home extends Component {
  
   render() {
-    return <div><HeaderImg 
+    return <div>
+    <HeaderImg 
       title="Fast an Furious"
        overview="Lorem Ipsum"
-       imgSrc={'./images/Fast_large.jpg'}
-
-    /></div>;
+       imgSrc={'../../images/Fast_large.jpg'} 
+    />
+    <SearchBar />
+    </div>;
   }
 }
 

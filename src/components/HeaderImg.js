@@ -10,6 +10,7 @@ render() {
             backgroundImage: `url(${this.props.imgSrc}) no-repeat`
         }}>
             <div className="headerImg--overlay">
+
                 <h3 className="headerImg-overlay__title">{this.props.title}</h3>
                 <p className="headerImg-overlay__desc">{this.props.overview}</p>
             </div>
