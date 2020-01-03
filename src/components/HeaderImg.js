@@ -4,10 +4,12 @@ import '../css/HeaderImg.css';
 
 class HeaderImg extends Component {
 render() {
+    console.log(this.props.imgSrc)
+
     return (
         <div className="headerImg"
         style={{ 
-            backgroundImage: `url(${this.props.imgSrc}) no-repeat`
+            backgroundImage: `url(${this.props.imgSrc})`
         }}>
             <div className="headerImg--overlay">
 

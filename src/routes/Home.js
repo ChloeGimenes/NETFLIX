@@ -32,7 +32,7 @@ const movies = [
     id: 475554,
     overview:
       "Dans les annÈes 1980, ‡ Gotham City, Arthur Fleck, un humoriste de stand-up ratÈ, bascule dans la folie et devient le Joker.",
-    poster_path: './images/Fast_.jpg',
+    poster_path: './images/Fast_small.jpg',
     title: "Joker"
   }
 ];

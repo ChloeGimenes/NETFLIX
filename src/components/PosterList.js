@@ -9,31 +9,25 @@ let wish;
 
 class PosterList extends Component {
 
-    renderPoster = () => {
-
-this.props.movies.map(movie => {
-    const imgSrc = movie.poster_path;
-    wish = false
-    return (
-        <Poster 
-        key={movie.id}
-        imgSrc={imgSrc}
-        hover={false}
-        wished={wish}
-        movie={movie}
-        mTitle={movie.title}
-        mDesc={movie.overview}
-        />
-    )
-})
-    }
  
     render() {
+
         return ( 
             <div className="posterList">
                 <h3 className="posterList--title"> NOUVEAUX FILMS</h3>
                 <div className="posterList--grid">
-                {this.renderPoster()}
+                {this.props.movies.map(movie => {
+                    const imgSrc = movie.poster_path;
+                    wish = false
+                    return (<Poster 
+                        key={movie.id}
+                        imgSrc={imgSrc}
+                        hover={false}
+                        wished={wish}
+                        movie={movie}
+                        mTitle={movie.title}
+                        mDesc={movie.overview}
+                        />)})}
                 </div>
             </div>
         )
