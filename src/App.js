@@ -52,15 +52,7 @@ totalPages: 0,
 searchText: '',
 }
 
-handleSearch = value => {
-  // lancer la recherche
-  console.log ('handleSearch', value)
-}
 
-loadMore = () => {
- // lancer une requête 
- console.log ('load more')
-}
 
 async componentDidMount () {
   try {
@@ -80,11 +72,64 @@ this.setState({
 
   }
 }
+
+loadMore = async() => {
+  try {
+    this.setState({ loading : true})
+    const { data: { results, page, total_pages }} = await this.loadMovies();
+   console.log('res', results);
+   this.setState({
+  movies: [...this.state.movies, ...results],
+  loading: false,
+  activePage: page,
+  totalPages: total_pages,
+  image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+  mTitle: results[0].title,
+  mDesc : results[0].overview,
+})
+
+  } catch (e) {
+    console.log('error loading more movies', e)
+  }
+ // lancer une requête 
+ console.log ('load more')
+}
+
+
 loadMovies = () => {
   const page = this.state.activePage + 1;
   const url = `${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}&language=fr`;
   return axios.get(url);
 }
+
+searchMovie = () => {
+  const url = `${API_URL}/search/movie?api_key=${API_KEY}&query=${this.state.searchText}&language=fr`;
+  return axios.get(url);
+}
+
+handleSearch = value => {
+
+  try {
+    this.setState({ loading : true, searchText: value, image: null}, async() => {
+    const { data: { results, page, total_pages }} = await this.searchMovie();
+    console.log('res', results);
+    this.setState({
+      movies: results,
+      loading: false,
+      activePage: page,
+      totalPages: total_pages,
+      image: `${IMAGE_BASE_URL}/${BACKDROP_SIZE}/${results[0].backdrop_path}`,
+      mTitle: results[0].title,
+      mDesc : results[0].overview,
+    }) 
+  })
+} catch(e) {
+  console.log('e', e)
+ }
+    
+  console.log ('handleSearch', value)
+}
+
   render() {
     return (
       <div className="App">
