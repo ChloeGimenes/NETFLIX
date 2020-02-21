@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import { Poster } from './index';
 import '../css/PosterList.css';
 
@@ -17,7 +19,7 @@ class PosterList extends Component {
                 <h3 className="posterList--title"> NOUVEAUX FILMS</h3>
                 <div className="posterList--grid">
                 {this.props.movies.map(movie => {
-                    const imgSrc = movie.poster_path;
+                    const imgSrc = `${IMAGE_BASE_URL}/${POSTER_SIZE}/${movie.poster_path}`;
                     wish = false
                     return (<Poster 
                         key={movie.id}
