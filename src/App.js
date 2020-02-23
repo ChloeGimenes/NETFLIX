@@ -1,52 +1,20 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import "./App.css";
-import { Header } from "./components";
-import { Home } from './routes';
+import { Header, Spinner} from "./components";
+import { Home, Details, NotFound } from './routes';
 import {API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 
 class App extends Component {
 state = {
-loading : false ,
-movies : [
-  {
-    backdrop_path: './images/Fast_large.jpg',
-    id: 475557,
-    overview:
-      "Dans les annÈes 1980, ‡ Gotham City, Arthur Fleck, un humoriste de stand-up ratÈ, bascule dans la folie et devient le Joker.",
-    poster_path: './images/Fast_small.jpg',
-    title: "Joker"
-  },
-  {
-    backdrop_path: './images/Fast_large.jpg',
-    id: 475558,
-    overview:
-      "Dans les annÈes 1980, ‡ Gotham City, Arthur Fleck, un humoriste de stand-up ratÈ, bascule dans la folie et devient le Joker.",
-    poster_path: './images/Fast_small.jpg',
-    title: "Joker"
-  },
-  {
-    backdrop_path: './images/Fast_large.jpg',
-    id: 475559,
-    overview:
-      "Dans les annÈes 1980, ‡ Gotham City, Arthur Fleck, un humoriste de stand-up ratÈ, bascule dans la folie et devient le Joker.",
-    poster_path: './images/Fast_small.jpg',
-    title: "Joker"
-  },
-  {
-    backdrop_path: './images/Fast_large.jpg',
-    id: 475554,
-    overview:
-      "Dans les annÈes 1980, ‡ Gotham City, Arthur Fleck, un humoriste de stand-up ratÈ, bascule dans la folie et devient le Joker.",
-    poster_path: './images/Fast_small.jpg',
-    title: "Joker"
-  }
-],
+loading : true,
+movies : [],
 
 badge : 0, 
-image : './images/Fast_small.jpg',
-mTitle : 'Fast and Furious',
-mDesc : 'lorem ipsum blablablablabla',
+image : null,
+mTitle : '',
+mDesc : '',
 activePage : 0,
 totalPages: 0,
 searchText: '',
@@ -132,15 +100,31 @@ handleSearch = value => {
 
   render() {
     return (
-      <div className="App">
-        <Header badge={this.state.badge} />
-        <Home 
-        {...this.state}
-        onSearchClick={this.handleSearch}
-        onButtonClick={this.loadMore}
 
-        />
+      <BrowserRouter>
+        <div className="App">
+           <Header badge={this.state.badge} />
+
+           {!this.state.image ? 
+         ( <Spinner />)
+        : 
+        (
+          <Switch>
+          <Route path="/" exact render={() => (
+          <Home 
+           {...this.state}
+            onSearchClick={this.handleSearch}
+            onButtonClick={this.loadMore}
+          /> )} />
+        
+        <Route path="/:id" exact component={Details}/>
+        <Route component={NotFound}/>
+
+
+        </Switch>
+        )}
       </div>
+      </BrowserRouter>
     );
   }
 }
