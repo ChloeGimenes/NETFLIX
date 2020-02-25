@@ -4,16 +4,37 @@ import '../css/Actor.css';
 
 
 class Actor extends Component {
+
+    state = { 
+        hover: false
+    }
   
+    showOverlay = () => {
+        console.log('mouse enter')
+        if (this.state.hover) {
+            return;}
+    
+        this.setState ({ hover: true})
+    }
+    
+    hideOverlay = () => {
+        console.log('mouse leave')
+        this.setState ({hover : false})
+    }
+    
+
+    
     render() { 
 
         const name = this.props.name.split(" ");
 
         return ( 
-            <div className='actor'>
+            <div className='actor'  
+            onMouseEnter={this.showOverlay} 
+            onMouseLeave={this.hideOverlay}>
 
                 <img className='actor--img' alt="actor" src={this.props.imgSrc} />
-                     {this.props.hover ?
+                     {this.state.hover ?
                         ( 
                     <div className='actor--overlay'>
                     <h3 className='actor--name'>{name[0]}</h3>
