@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Provider } from 'react-redux';
 import axios from 'axios';
 import "./App.css";
 import { Header, Spinner} from "./components";
-import { Home, Details, NotFound } from './routes';
+import { Home, Details, NotFound, MoviePlayer } from './routes';
 import {API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
+import store from './store';
 
 class App extends Component {
 state = {
@@ -101,6 +103,7 @@ handleSearch = value => {
   render() {
     return (
 
+      <Provider store={store}>
       <BrowserRouter>
         <div className="App">
            <Header badge={this.state.badge} />
@@ -116,7 +119,8 @@ handleSearch = value => {
             onSearchClick={this.handleSearch}
             onButtonClick={this.loadMore}
           /> )} />
-        
+        <Route path="/player" exact component={MoviePlayer} />
+        <Route path="/player/:id" exact component={MoviePlayer} />
         <Route path="/:id" exact component={Details}/>
         <Route component={NotFound}/>
 
@@ -125,6 +129,7 @@ handleSearch = value => {
         )}
       </div>
       </BrowserRouter>
+      </Provider>
     );
   }
 }
