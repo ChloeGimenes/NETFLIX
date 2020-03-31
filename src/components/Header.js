@@ -26,18 +26,23 @@ class HeaderComponent extends Component {
     return (
 
       <div className="header">
+        <div className="soft">
         <Link to={{ pathname : "/"}} >
-        <FontAwesome className="header--movie" name='film' size="5x" />
+        <FontAwesome className="header--movie" name='film' size="4x" />
         </Link>
-        <h3>NETFLIX</h3>
+        </div>
+
+        <div className="soft">
+        <h3>FAKEFLIX</h3>
+        </div>
 
         {/* <p>WELCOME {firebase.auth().currentUser.displayName}</p> */}
 
-        <button>SIGN OUT PLEASE</button>
-
+        <div className="soft">
         <Link to={{ pathname:"/player"}} >
-          <FontAwesome className="header--heart" name='heart' size="5x" />
+          <FontAwesome className="header--heart" name='heart' size="4x" />
         </Link>
+        </div>
         <div className="header--badge">{this.props.badge}</div>
         
       </div>

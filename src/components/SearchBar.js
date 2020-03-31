@@ -16,10 +16,11 @@ class SearchBar extends Component {
 
 <div className="searchBar--container">
     <div className="searchBar">
-        <input className="searchBar--input" type="text" placeholder="Chercher un film" value={value} onChange={this.handleChange}/>
-        <div className="searchBar--submit" onClick={() => this.props.onSearchClick(value)}></div>
-        <FontAwesome className="searchIcon" name="search" />
-    </div>
+        
+             <input className="searchBar--input" type="text" placeholder="Chercher un film" value={value} onChange={this.handleChange}/>
+              <FontAwesome className="searchIcon" name="search" onClick={() => this.props.onSearchClick(value)}/>
+              
+        </div>
 </div>
         )
 

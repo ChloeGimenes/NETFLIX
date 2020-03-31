@@ -36,7 +36,7 @@ class Login extends Component {
         return (
             <div className="login">
                 <Alert color="primary">
-                    <h3>VOUS DEVEZ VOUS CONNECTER POUR CONTINUER</h3>
+                    <h3>CONNECTEZ-VOUS POUR CONTINUER</h3>
                 </Alert>
                 <StyledFirebaseAuth 
                     uiConfig={uiConfig}

@@ -15,6 +15,12 @@
   src: local("Wicked Scary Movie"), url("WickedScaryMovie.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Moon";
+
+  src: url('../src/font/Moon2.0-Regular.otf');
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -22,16 +28,19 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  font-family: "Moon" !important;
+
 }
 body {
-  font-family: "Wicked Scary Movie", Helvetica, Arial, sans-serif !important;
+  font-family: "Moon" !important;
+
 }
 div {
   overflow: hidden;
 }
 h3 {
-  font-family: "28 Days Later" !important;
 }
+
 .app {
   display: flex;
   flex-direction: column;
