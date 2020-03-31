@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import axios from 'axios';
 import "./App.css";
 import { Header, Spinner} from "./components";
-import { Home, Details, NotFound, MoviePlayer } from './routes';
+import { Home, Details, NotFound, MoviePlayer, Login } from './routes';
 import {API_URL, API_KEY, IMAGE_BASE_URL, BACKDROP_SIZE } from './config';
 import store from './store';
+import {initFirebase} from './utils/firebase-config'
 
 class App extends Component {
 state = {
@@ -26,6 +27,7 @@ searchText: '',
 
 async componentDidMount () {
   try {
+    initFirebase();
 const { data: { results, page, total_pages }} = await this.loadMovies();
 console.log('res', results);
 this.setState({
@@ -121,6 +123,7 @@ handleSearch = value => {
           /> )} />
         <Route path="/player" exact component={MoviePlayer} />
         <Route path="/player/:id" exact component={MoviePlayer} />
+        <Route path="/login" exact component={Login} />
         <Route path="/:id" exact component={Details}/>
         <Route component={NotFound}/>
 

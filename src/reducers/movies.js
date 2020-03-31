@@ -13,7 +13,7 @@ export const movieReducer = (state = initialState, action) => {
             console.log('add movie called', action.payload)
             return {
                 movies : action.payload,
-                number : action.payload.lenght
+                number : action.payload.length
             }
         case REMOVE_MOVIE : 
             console.log('remove movie called', action.payload)
