@@ -1,67 +1,84 @@
 .header {
-  z-index: 1000;
-  width: 100%;
-  height: 12rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background: #efeeee;
-  color: rgb(47, 47, 51);
-  position: fixed;
-  top: 0;
-  /* padding: 0 1.5rem; */
-}
-.header h3 {
-  font-weight: bold;
-  font-size: 3rem;
-  letter-spacing: 3rem;
-  padding: 8px;
-  margin-left: 60px;
-  margin-right: 28px;
-  cursor: pointer;
+	z-index: 1000;
+	width: 100%;
+	height: 12rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background: #efeeee;
+	color: rgb(47, 47, 51);
+	position: fixed;
+	top: 0;
 
+	font-family: 'Moon Bold';
+	/* padding: 0 1.5rem; */
+}
+
+.header-right-corner {
+	display: flex;
+}
+
+.header h3 {
+	font-size: 4rem;
+	letter-spacing: 3rem;
+	padding: 8px;
+	margin-left: 60px;
+	margin-right: 28px;
+	cursor: pointer;
+	font-family: 'Moon Bold';
+	font-weight: bold;
 }
 .header--movie {
-  color: #fff;
-  padding: 20px;
-  color: rgb(47, 47, 51);
-  
+	color: #fff;
+	padding: 20px;
+	color: rgb(47, 47, 51);
 }
 .header--heart {
-  color: rgb(47, 47, 51);
-
-  cursor: pointer;
-  padding: 20px;
-
+	color: rgb(47, 47, 51);
+	cursor: pointer;
+	padding: 20px;
 }
+
+.header--trash {
+	color: rgb(47, 47, 51);
+	cursor: pointer;
+	padding: 12px;
+}
+
+#trash {
+	border-radius: 135px;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	margin-right: 20px;
+}
+
 .header--container {
-  position: relative;
+	position: relative;
 }
 .header--badge {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 1.3rem;
-  background: #1c1c1c;
-  color: white;
-  right: 2rem;
-  bottom: 0.3rem;
-  font-weight: bolder;
-  font-size: 1.5rem;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 1.3rem;
+	background: #1c1c1c;
+	color: white;
+	right: 9rem;
+	bottom: 1.3rem;
+	font-weight: bolder;
+	font-size: 1.5rem;
 }
 
 .soft:hover {
-  box-shadow: inset 10px 10px 20px #a6a8ab, 
-  inset -10px -10px 20px #ffffff;
+	box-shadow: inset 10px 10px 20px #a6a8ab, inset -10px -10px 20px #ffffff;
 }
 
 .soft {
-	border-radius: 41px;
-  box-shadow:  10px 10px 20px #a6a8ab, 
-  -10px -10px 20px #ffffff;
-  margin: 30px;
+	border-radius: 12px;
+	box-shadow: 10px 10px 20px #a6a8ab, -10px -10px 20px #ffffff;
+	margin: 30px;
 }

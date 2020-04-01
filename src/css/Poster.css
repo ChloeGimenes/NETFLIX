@@ -2,11 +2,26 @@
 	margin: 2%;
 	width: 20%;
 	position: relative;
+	border-radius: 10px;
+	/* border: 1px solid rgba(166, 168, 171, 0.20); */
+	box-shadow: 10px 10px 20px #a6a8ab, -10px -10px 20px #ffffff;
 }
+
+.poster:hover {
+	box-shadow: inset 10px 10px 20px #a6a8ab, inset -10px -10px 20px #ffffff;
+}
+
 .poster--img {
 	width: 100%;
 	cursor: pointer;
 }
+
+.poster--img:hover {
+	width: 98%;
+	margin: auto;
+	border-radius: 10px;
+}
+
 .poster--overlay {
 	position: absolute;
 	left: 0;
@@ -15,9 +30,9 @@
 	height: 20%;
 	background: rgba(0, 0, 0, 0.5);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: center;
 }
 .poster--icon {
 	color: #781818;

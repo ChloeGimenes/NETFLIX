@@ -1,19 +1,25 @@
 import React from 'react';
+import '../css/Spinner.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 
-library.add(faSpinner);
 
-const Spinner = props => {
+const Spinner = () => {
 
-    return ( <FontAwesomeIcon 
-        icon="spinner"
-        pulse
-        size="7x"
-        className="fa-faSpinner"
-        />)
+    return ( 
+       
+        <div className="container-a">
+        
+        <span className="dot"></span>
+
+        <div className="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+        )
 }
 
 export { Spinner };

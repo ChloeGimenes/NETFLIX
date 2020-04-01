@@ -20,6 +20,18 @@ class HeaderComponent extends Component {
 
   }
 
+   refreshPage() {
+    window.location.reload(false);
+   }
+
+    clearLocal() {
+    window.location.reload(false);
+
+      localStorage.clear();
+  }
+  
+
+
 
   render() {
 
@@ -32,12 +44,13 @@ class HeaderComponent extends Component {
         </Link>
         </div>
 
-        <div className="soft">
+        <div className="soft" onClick={this.refreshPage} >
         <h3>FAKEFLIX</h3>
         </div>
 
         {/* <p>WELCOME {firebase.auth().currentUser.displayName}</p> */}
-
+      
+    <div className="header-right-corner">
         <div className="soft">
         <Link to={{ pathname:"/player"}} >
           <FontAwesome className="header--heart" name='heart' size="4x" />
@@ -45,6 +58,10 @@ class HeaderComponent extends Component {
         </div>
         <div className="header--badge">{this.props.badge}</div>
         
+        <div className="soft" id="trash">
+        <FontAwesome className="header--trash" onClick={this.clearLocal} name='ban' size="3x" />
+        </div>
+    </div>
       </div>
     );
   }

@@ -15,9 +15,10 @@ class LoadButton extends Component {
                 />
              )
         :
-    (
+    (  <div className="load">
         <div className="loadButton" onClick={this.props.onButtonClick}>
             <h3 className="loadButton--text">VOIR PLUS</h3>
+        </div>
         </div>
      )}
      </>

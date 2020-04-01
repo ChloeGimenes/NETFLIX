@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ScrollUpButton from "react-scroll-up-button";
 
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import { Poster } from './index';
@@ -49,7 +50,11 @@ render () {
                 <div className="posterList--grid">
                 {this.renderPoster()}
                 </div>
+                <div>
+                <ScrollUpButton />
+                </div>
             </div>
+
         )
     }
 }

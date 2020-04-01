@@ -52,7 +52,7 @@ add = () => {
             {this.state.hover ?
             ( 
             <div className="poster--overlay">
-                <h3 className="poster--overlay__text">LISTE DE SOUHAITS</h3>
+                <h3 className="poster--overlay__text">ADD TO LIST</h3>
                 {this.props.wished ?
                 ( 
                     <FontAwesome  onClick={this.remove} className="poster--icon" name="heart" size="3x" />
